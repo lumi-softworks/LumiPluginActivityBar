@@ -54,7 +54,7 @@ internal struct ActivityBarView: View {
                     Button {
                         NotificationCenter.default.post(name: .lumiOpenSettings, object: nil)
                     } label: {
-                        Label("打开设置", systemImage: "gearshape")
+                        Label(pluginLocalization.string("Open Settings"), systemImage: "gearshape")
                     }
                 }
             }

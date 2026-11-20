@@ -19,6 +19,7 @@ let package = Package(
         .package(url: "https://github.com/lumi-softworks/LumiKernel.git", from: "1.1.0"),
         .package(url: "https://github.com/lumi-softworks/LumiUI.git", from: "1.11.1"),
         .package(url: "https://github.com/lumi-softworks/LumiLogging.git", from: "1.0.1"),
+        .package(url: "https://github.com/lumi-softworks/LumiLocalization.git", from: "1.0.1"),
     ],
     targets: [
         .target(
@@ -31,7 +32,10 @@ let package = Package(
                 .product(name: "ProviderPluginManaging", package: "LumiProviders"),
                 .product(name: "ProviderStorage", package: "LumiProviders"),
                 .product(name: "ProviderRootView", package: "LumiProviders"),
-            ]
+                .product(name: "LumiLocalizationKit", package: "LumiLocalization"),
+            ],
+            path: "Sources/PluginActivityBar",
+            resources: [.process("../../Resources/Localizable.xcstrings")]
         ),
         .testTarget(
             name: "PluginActivityBarTests",
